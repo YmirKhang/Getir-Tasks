@@ -5,17 +5,19 @@ const mongoose = require("mongoose");
 const Record = require('../models/record');
 
 router.get("/", (req, res, next) => {
-  Record.find()
-    .select("record key _id")
+  Record.find() //TODO aggregation function for the total count and post request response
+    .select("record key createdAt")
     .exec()
     .then(docs => {
       res.status(200).json({
-        count: docs.length,
+        code: 0,
+        msg: "Success",
+        //count: docs.length,
         records: docs.map(doc => {
           return {
-            _id: doc._id,
             key: doc.key,
-            
+            createdAt: doc.createdAt,
+
           /*  request: {
               type: "GET",
               url: "http://localhost:3000/searchRecords/" + doc._id
