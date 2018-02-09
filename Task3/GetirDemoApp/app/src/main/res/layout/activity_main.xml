@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.muaz.getirdemoapp.MainActivity"
+    android:orientation="vertical"
+    android:padding="20dp"
+    >
+
+
+
+
+    <EditText
+        android:id="@+id/et_max_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_alignParentTop="true"
+        android:hint="max count"/>
+
+    <EditText
+        android:id="@+id/et_min_count"
+        android:layout_below="@id/et_max_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="min count"/>
+
+
+    <com.savvi.rangedatepicker.CalendarPickerView
+        android:layout_below="@+id/et_min_count"
+        android:layout_above="@id/ll_search"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cal_date_range"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:clipToPadding="false"
+        app:tsquare_dividerColor="@color/colorPrimaryDark"
+        app:tsquare_headerTextColor="@color/colorPrimaryDark"
+        />
+
+
+    <LinearLayout
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginTop="10dp"
+        android:id="@+id/ll_search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:textSize="20sp"
+            android:textColor="#ffffff"/>
+    </LinearLayout>
+</RelativeLayout>
